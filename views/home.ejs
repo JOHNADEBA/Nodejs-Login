@@ -1,0 +1,95 @@
+ <!DOCTYPE html>
+ <html lang="en">
+ <head>
+     <meta charset="UTF-8">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <title>HOME</title>
+ </head>
+ <style>
+    *{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    }
+    body{
+        background: #000;
+        color: #ccc;
+        height: 100%; 
+        width: 100%;
+    }
+    .mobile, .desktop{
+        margin-top: 5px;
+        float: right;
+        font-size: 0.7rem;
+        margin-right: 0.4rem;
+        text-decoration: none;
+        color: red;
+    }
+    .mobile:hover, .desktop:hover{
+        opacity: 0.5;
+    }
+    .mobile{
+        display: none
+    }
+    header{   
+        height: 15vh;
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+    }
+    .left{
+        font-size: 1.3rem;
+    }
+    ul{
+        list-style: none;
+        display: flex;
+  }
+  li{
+    margin-right: 2rem;
+    cursor: pointer;
+  }
+  
+  li:hover{
+      color: #fff;
+  }
+  .last div{
+      border-top: 3px solid #ccc;
+      width: 1.5rem ;
+      margin-bottom:0.5rem ;
+                
+  }
+  .last{
+    cursor: pointer;
+    font-weight: bold;
+    display: none;
+    transition: all 0.3s ease;
+  }
+ 
+
+ 
+
+ </style>
+ <body>
+    <a class='desktop'href="/logout">Sign Out</a>
+     <header>
+         <div class="left">
+             <h1>LOGO</h1>
+         </div>
+         <div class="right">
+             <ul>
+                 <li>About Us</li>
+                 <li>Contact</li>
+                 <!-- <li><a class='mobile' href="/logout">Sign Out</a></li> -->
+             </ul>
+         </div>
+         <div class="last">
+             <div class="up"></div>
+             <div class="mid"></div>
+             <div class="down"></div>
+         </div>
+     </header>
+    <h1 class='first'>Hello <%= user.charAt(0).toUpperCase() + user.slice(1) %> </h1>
+         
+    
+ </body>
+ </html>

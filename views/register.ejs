@@ -1,0 +1,116 @@
+ <!DOCTYPE html>
+ <html lang="en">
+ <head>
+     <meta charset="UTF-8">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <link rel="stylesheet" href="https://unpkg.com/tachyons@4/css/tachyons.min.css">
+     <title>register</title>
+ </head>
+ <style>
+  *{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  body{
+        margin: 3rem auto;
+      }
+  ul{
+    margin:1rem 2rem;
+  }
+  li{
+        font-size: 1rem;        
+        color: red;
+  }
+  article{
+    margin: 15rem auto;
+    background: #222;
+    
+  }
+  form{
+    color: #ccc;
+  }
+  .submit{
+    padding: 0.5rem;
+    cursor: pointer;
+    border: none;
+    
+  }
+  .submit:hover{
+    background: green;
+    color: #ccc;
+    
+  }
+  .submit:focus{
+    outline: 0;
+    
+  }
+  a{
+    color: #ccc;
+    text-decoration: none; 
+    margin-left: 9rem;
+    
+ }
+ a:hover{
+    color:green;
+ }
+ .pas:focus{
+   outline: 0;
+ }
+ 
+</style>
+ <body>
+
+  <ul>
+    <% if(typeof errors != 'undefined'){ %>
+      <% errors.forEach(error =>{ %>
+       <li > <%= error.message %> </li>
+       <% } ) %>
+
+       <%} %>
+  </ul>
+    <article class="br2 ba dark-gray b--black-10 mv2 w-100 w-50-m w-25-l mw5 center shadow-5">
+
+        <form action='/register' method='POST' class="measure  pa3">
+        
+            <fieldset id="sign_up" class="ba b--transparent ph0 mh0">
+              <legend class="f2 fw6 ph0 mh0">Sign Up</legend>
+        
+                
+              <div class="mt3">
+                <label class="db fw6 lh-copy f5" htmlFor="name">Name</label>
+                <input class="pas" type="text" name="name"  id="name" required />
+              </div>
+        
+             
+              <div class="mv3">
+                <label class="db fw6 lh-copy f5" htmlFor="email-address">Email</label>
+                <input class="pas" type="email" name="email"  id="email" required />
+              </div>
+        
+              <div class="mv3">
+                <label class="db fw6 lh-copy f5" htmlFor="password">Password</label>
+                <input class="pas" type="password" name="password"  id="password" required />
+              </div>
+              
+
+              <div class="mv3">
+                <label class="db fw6 lh-copy f5" htmlFor="password2"> Confirm Password</label>
+                <input class="pas" type="password" name="password2"  id="password2" required />
+              </div>
+              </fieldset>
+        
+            <div class="">
+              <input class="submit" type="submit" value="Sign Up" /> 
+              
+            </div>
+            
+            <div class="lh-copy mt3">
+              <a  href="/login" >Sign In</a>
+            </div>
+        
+          </form>
+        </article>
+        
+ </body>
+ </html>

@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://unpkg.com/tachyons@4/css/tachyons.min.css">
+    <title>Login</title>
+    <style>
+      *{
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      body{
+        margin: 2rem auto;
+      }
+      ul{
+        margin:1rem 2rem;
+      }
+      li{
+        font-size: 1rem;        
+        color: red;
+      }
+      article{
+        margin: 15rem auto;
+        background: #222;
+        
+      }
+      form{
+        color: #ccc;
+      }
+      .submit{
+        padding: 0.5rem;
+        cursor: pointer;
+        border: none;
+        
+      }
+      .submit:hover{
+        background: green;
+        color: #ccc;
+        
+      }
+      .submit:focus{
+        outline: 0;
+        
+      }
+          a{
+        color: #ccc;
+        text-decoration: none; 
+        margin-left: 9rem;
+        
+     }
+     a:hover{
+        color:green;
+     }
+     .pas:focus{
+       outline: 0;
+     }
+    </style>
+</head>
+<body>
+  <ul>
+    <% if(messages.sucess){ %>
+      <li style='color: red'> <%= messages.sucess %> </li>
+
+   <% }%>
+  </ul>
+
+  <ul>
+    <% if(messages.error){ %>
+    <li > <%= messages.error  %> </li> 
+     <% } %>
+  </ul>
+
+   <article class="br2 ba dark-gray b--black-10 mv2 w-100 w-50-m w-25-l mw5 center shadow-5">
+
+       <form action='/login' method='POST' class="measure  pa3">
+       
+           <fieldset id="sign_up" class="ba b--transparent ph0 mh0">
+             <legend class="f2 fw6 ph0 mh0">Sign In</legend>
+       
+            <div class="mv3">
+               <label class="db fw6 lh-copy f5" htmlFor="email-address">Email</label>
+               <input class="pas" type="email" name="email"  id="email" required />
+             </div>
+       
+             <div class="mv3">
+               <label class="db fw6 lh-copy f5" htmlFor="password">Password</label>
+               <input class="pas" type="password" name="password"  id="password" required />
+             </div>
+             
+             </fieldset>
+       
+           <div >
+             <input class="submit" type="submit" value="Sign In" /> 
+             
+           </div>
+           
+           <div class="lh-copy mt3">
+             <a href="/register" >Sign Up</a>
+           </div>
+       
+         </form>
+       </article>
+       
+</body>
+</html>
+
